@@ -1,0 +1,677 @@
+/* 
+font-family: 'Bebas Neue', cursive;
+font-family: 'Roboto', sans-serif; 
+*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap');
+@font-face {
+    font-family: 'Bebas Neue';
+    src: local('Bebas Neue Regular Regular'), local('BebasNeueRegular'),
+        url('../fonts/BebasNeueRegular.woff2') format('woff2'),
+        url('../fonts/BebasNeueRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; 
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+/* ------------------------ HEADER ------------------------  */
+.header {
+    background-color: #635854;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #3596F5;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+}
+
+.menu__hamb {
+    border: none;
+    background: none;
+    display: none;
+}
+
+.hamb {
+    width: 35px;
+}
+
+.menu__panel {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+/* ----- NAV ----- */
+.nav {
+    width: 70%;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__item {
+    list-style-type: none;
+    text-align: center;
+}
+
+.nav__link {
+    color: #fff;
+    text-decoration: none;
+}
+
+header .is-click {
+    display: block;
+}
+/* _____ NAV _____ */
+
+/* ----- CONTACTS ----- */
+.contacts {
+    text-align: right;
+}
+
+.contacts__text {
+    color: #fff;
+    font-size: 14px;
+}
+
+.contacts__phone {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.55em;
+}
+/* _____ CONTACTS _____ */
+
+/* ________________________ HEADER ________________________ */
+
+/* ------------------------ MAIN ------------------------  */
+.main {
+    padding-top: 56px;
+    padding-bottom: 95px;
+}
+
+.wrapper {
+    display: flex;
+}
+
+/* ----- MAIN__IMAGE ----- */
+.home path {
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+.home path:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+/* _____ MAIN__IMAGE _____ */
+
+/* ----- MAIN__INFO ----- */
+.main__info {
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 37px;
+    font-weight: 200;
+    color: #635854;
+    margin-top: 67px;    
+}
+
+.counter__num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 100px;    
+    color: #635854;  
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.counter__button {
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.button__primary {
+    border: none;
+    background-color: #3596F5;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    padding: 16px 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 67px;
+}
+
+path.current__floor {
+    opacity: 1;
+}
+
+/* _____ MAIN__INFO _____ */
+
+/* ________________________ MAIN ________________________ */
+
+/* ------------------------ MODAL ------------------------  */
+
+/* Подложка диалогового окна */
+.modal {
+    /*Фиксированная позиция, поверх всего сайта*/
+    position: fixed;
+    /* Подложка диалогового окна позируется с левого верхнего края */
+    left: 0;
+    top: 0;
+    /* Подложка диалогового окна занимает всю ширину и высоту */
+    width: 100%;
+    height: 100%;
+    /* Подложка диалогового окна становится темно-прозрачным */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Сделаем подложку гибкой для того, чтобы легче манипулировать с детьми */
+    display: flex;
+    /* Отцентрируем ребенка по центру вертикали и горизонтали */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s ease;
+    z-index: 3;
+}
+
+.is-open {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Диалоговое окно */
+.modal__dialog {
+    /* Диалоговое окно занимает ширину и высоту */
+    width: 1000px;
+    height: 565px;
+    /* Диалоговое окно становится белым */
+    background-color: #fff;
+    /* Сделаем подложку гибкой для того, чтобы легче манипулировать с детьми */
+    display: flex;
+    /* Ориентировачный блок для кнопки закрытия модального окна */
+    position: relative;
+}
+
+/* Сектор с изображением на диалоговом окне */
+.modal__image {
+    /* Зададим цвет сектора с изображением */
+    background-color: #EBEBEB;
+    /* Т.к. родитель имеет размер 1000px, то, по макету, сектор будет в ширину 60% - 600px */
+    width: 60%;
+    /* Выравнить текст и изображение по центру */
+    text-align: center;
+    /* Общий внутренний отступ */
+    padding: 50px;
+}
+
+.room path {
+    opacity: 0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.room path:hover {
+    opacity: 1;
+}
+
+.modal__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.modal__info {
+    padding: 50px 46px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flat__item {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.flat__link {
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 400;
+    text-decoration: none;
+    color: #635854;
+    transition: all 0.3s ease;
+}
+
+.flat__link:hover {
+    color: #3595F6;
+    text-decoration: underline;    
+}
+
+.is-selected {
+    color: #3595F6;
+    text-decoration: underline;
+}
+
+.room .is-hover {
+    opacity: 1;
+}
+
+.modal__alert {
+    font-style: italic;
+    font-weight: normal;
+    color: #635854;      
+}
+
+.modal__closeBtn {
+    position: absolute;
+    right: 27px;
+    top: 38px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal__closeBtn:hover {
+    transform: scale(1.15);
+}
+
+.modal .modal__counter {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #000;
+}
+
+/* ________________________ MODAL ________________________ */
+
+/* -------------------------FOOTER------------------------- */
+.footer {
+    padding-top: 50px;
+    padding-bottom: 56px;
+    border-top: 4px solid #3596F5;
+    background-color: #D7D7D7;
+}
+
+.footer__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.communication {
+    display: flex;
+    align-items: center;
+}
+
+.contact-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.contacts__logo {
+    margin-right: 37px;
+}
+
+footer .footer__contacts {
+    text-align: left;
+    margin-right: 59px;
+}
+
+.footer__contacts-text {
+    color: #635854;
+}
+
+.footer__phone-text {
+    color: #635854;
+}
+
+.social {
+    margin-left: 15px;
+    cursor: pointer;  
+    
+}
+
+.credits__text {
+    color: #635854;
+    margin-left: 20px;  
+}
+/* _________________________FOOTER_________________________ */
+
+
+
+/* -------------------------RESPONSIVE------------------------- */
+
+ /*1201px - 1400px*/
+ @media screen and (max-width:1400px) {
+    .container {
+        width: 1140px;
+    }   
+}
+
+ /*993px - 1200px*/
+ @media screen and (max-width:1200px) {
+    .container {
+        width: 960px;
+    }
+
+    /* -----------HEADER----------- */
+    /* ___________HEADER___________ */
+
+
+    /* -----------MAIN----------- */
+    .home {
+        width: 60%;
+        height: 68.4%;
+    }
+
+    .main__title {
+        font-size: 30px;
+    }
+
+    .counter__num {
+        font-size: 80px;
+    }
+    /* ___________MAIN___________ */
+
+
+    /* -----------MODAL----------- */
+    .modal__dialog {
+        width: 90%;
+    }
+    /* ___________MODAL___________ */
+
+
+    /* -----------FOOTER----------- */
+    .credits {
+        display: flex;
+        flex-direction: column;
+    }
+    /* ___________FOOTER___________ */
+
+    
+
+    
+}
+
+ /*769px - 992px*/
+ @media screen and (max-width:992px) {
+    .container {
+        width: 720px;
+        position: relative;
+    }
+    /* -----------HEADER----------- */
+    .nav__list {
+        flex-direction: column;
+    }
+
+    .nav__item {
+        margin-bottom: 20px;
+    }
+
+    .contacts {
+        text-align: center;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+
+    .menu__panel {
+        position: absolute;
+        flex-direction: column;
+        top: 50px;
+        right: 0;
+        background-color: #635854;
+        width: auto;
+        z-index: 5;
+        padding: 20px 20px;
+        display: none;
+        
+    }
+
+    .menu__hamb {
+        display: block;
+        cursor: pointer;
+    }
+    /* ___________HEADER___________ */
+    
+    /* -----------MAIN----------- */
+
+    .main__title {
+        margin-top: 30px;
+        font-size: 25px;
+    }
+
+    .button__primary {
+        margin-bottom: 30px;
+        width: 75%;
+    }
+
+
+    /* ___________MAIN___________ */
+
+    /* -----------MODAL----------- */
+
+    .room {
+        width: 100%;
+    }
+
+    .modal__title {
+        margin-bottom: 0;
+    }
+
+    .modal__closeBtn {
+        right: 9px;
+        top: 9px;
+    }
+
+    /* ___________MODAL___________ */
+
+    /* -----------FOOTER----------- */
+    .footer .footer__contacts {
+        margin-right: 37px;
+    }
+
+    /* ___________FOOTER___________ */
+
+}
+
+ /*577px - 768px*/
+ @media screen and (max-width:768px) {
+    .container {
+        width: 540px;
+    }
+
+    /* -----------HEADER----------- */
+    /* ___________HEADER___________ */
+
+    /* -----------MAIN----------- */
+    .wrapper {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .home {
+        width: 100%;
+    }
+
+    .main__title {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .button__primary {
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+    /* ___________MAIN___________ */
+
+
+    /* -----------MODAL----------- */
+    .modal__dialog {
+        display: flex;
+    }
+
+    .modal__image {
+        padding-top: 25px;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .modal__info {
+        padding: 50px 25px;
+        font-size: 14px;
+        padding-top: 60px;
+    }
+
+    .modal__title {
+        margin-bottom: 25px;
+    }
+    /* ___________MODAL___________ */
+
+
+    /* -----------FOOTER----------- */
+    
+    .footer .footer__contacts {
+        margin: 0;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .contact-wrap {
+        flex-direction: column;
+    }
+
+    .social {
+        margin: 0;
+    }
+
+    .social-media {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    /* ___________FOOTER___________ */
+    
+   
+
+    
+
+
+}
+
+ /*321px - 576px*/
+ @media screen and (max-width:576px) {
+    .container {
+        width: 90%;
+    }
+    
+    /* -----------HEADER----------- */
+    /* ___________HEADER___________ */
+
+    /* -----------MAIN----------- */
+    /* ___________MAIN___________ */
+
+
+    /* -----------MODAL----------- */
+
+    .modal__dialog {
+        height: auto;
+    }
+
+    .modal__info {
+        padding: 35px 5px;
+        font-size: 12px;
+        padding-bottom: 10px;
+    }
+
+    .modal__alert {
+        margin: 0;
+    }
+
+    .modal__title {
+        margin-top: 15px;
+        font-size: 20px;
+    }
+
+    .modal__closeBtn svg {
+        width: 20px;
+    }
+
+    .modal__closeBtn {
+        top: 5px;
+        right: 5px;
+    }
+
+    .room {
+        height: 80%;
+    }
+    /* ___________MODAL___________ */
+
+
+    /* -----------FOOTER----------- */
+    .footer__wrap {
+        flex-direction: column;
+    }
+
+    .communication {
+        margin-bottom: 25px;
+    }
+
+    .credits {
+        text-align: center;
+    }
+    /* ___________FOOTER___________ */
+    
+
+    
+}
+
+/* _________________________RESPONSIVE_________________________ */
