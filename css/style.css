@@ -173,6 +173,21 @@ header .is-click {
 .main {
     padding-top: 56px;
     padding-bottom: 95px;
+
+    position: relative;
+}
+
+.main__parallax {
+    position: absolute;
+    left: -10%; top: -10%;  
+    z-index: -1;
+
+    width: 110%; height: 110%;
+
+    background-image: url(../img/parallax_bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .wrapper {
@@ -222,7 +237,7 @@ header .is-click {
 
 .counter__button {
     border: none;
-    background-color: #fff;
+    background-color: transparent;
     cursor: pointer;
 }
 
