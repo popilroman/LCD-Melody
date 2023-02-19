@@ -5,12 +5,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const  menuHamb = this.document.querySelector(".menu__hamb");
         const menuSpan = this.document.querySelector(".hamb");
+        const menuPanel = this.document.querySelector(".menu__panel");
 
-        menuHamb.addEventListener("click", transformBtn);
+        menuHamb.addEventListener("click", function() {
+            transformBtn();
+            isClick();
+        });
 
         function transformBtn() {
             menuSpan.classList.toggle("click");    
         };
-        
+
+        function isClick() {
+            menuPanel.classList.toggle("is-click");
+        }
+
+        function outClick() {
+            document.onclick = function(e) {
+                if (e.target.className != "menu__panel") {
+                    menuPanel.classList.remove("is-click");
+                }
+            }
+        }
+ 
      });
 });
