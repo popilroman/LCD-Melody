@@ -99,6 +99,9 @@ span.click::before {transform: rotate(45deg);}
     align-items: center;
 
     width: 80%; height: 100%;
+
+    transform-origin: top;
+    transition: all 0.3s ease;
 }
 
 /* ----- NAV ----- */
@@ -139,7 +142,8 @@ span.click::before {transform: rotate(45deg);}
 }
 
 header .is-click {
-    display: flex;
+    transform: scaleY(1);
+    opacity: 1;
 }
 /* _____ NAV _____ */
 
@@ -557,8 +561,10 @@ footer .footer__contacts {
         width: auto;
         z-index: 5;
         padding: 20px 20px;
-        display: none;
         height: auto;
+
+        transform: scaleY(0);
+        opacity: 0;
         
     }
 
