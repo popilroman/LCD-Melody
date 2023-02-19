@@ -72,7 +72,7 @@ span.hamb {
     background-color: #fff;
 }
 span.hamb::after, span.hamb::before {
-    content: " ";
+    content: "";
 
     position: absolute;
     top: calc(50% - 2px);
@@ -83,8 +83,8 @@ span.hamb::after, span.hamb::before {
 
     transition: all 0.3s ease;
 }
-span.hamb::after {transform: translateY(-10px);}
-span.hamb::before {transform: translateY(10px);}
+span.hamb::after {transform: translateY(10px);}
+span.hamb::before {transform: translateY(-10px);}
 
 span.click {
     height: 0;
@@ -179,6 +179,8 @@ header .is-click {
     padding-bottom: 95px;
 
     position: relative;
+
+    overflow: hidden;
 }
 
 .main__parallax {
