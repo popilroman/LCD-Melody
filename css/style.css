@@ -407,9 +407,9 @@ path.current__floor {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
-.modal__closeBtn:hover {
-    transform: scale(1.15);
+.modal__closeBtn path {transition: all 0.2s ease;}
+.modal__closeBtn:hover path {
+    stroke:rgb(221, 39, 39)
 }
 
 .modal .modal__counter {
