@@ -16,11 +16,19 @@ font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif; 
     font-size: 16px;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,6 +44,16 @@ ul, li {
 .container {
     width: 1280px;
     margin: 0 auto;
+}
+
+.header {
+    flex: 0 0 auto;
+}
+.main {
+    flex: 1 0 auto;
+}
+.footer {
+    flex: 0 0 auto;
 }
 
 /* ------------------------ HEADER ------------------------  */
@@ -451,8 +469,10 @@ footer .footer__contacts {
 }
 
 .credits__text {
-    color: #635854;
-    margin-left: 20px;  
+    color: #635854; 
+}
+.credits__text:not(:first-child) {
+    margin-left: 20px;
 }
 /* _________________________FOOTER_________________________ */
 
@@ -504,6 +524,14 @@ footer .footer__contacts {
     .credits {
         display: flex;
         flex-direction: column;
+    }
+
+    .credits .credits__text {
+        margin-left: auto;
+    }
+
+    .credits__text:not(:last-child) {
+        margin-bottom: 10px;
     }
     /* ___________FOOTER___________ */
 
@@ -762,6 +790,11 @@ footer .footer__contacts {
 
     .credits {
         text-align: center;
+
+        align-items: center;
+    }
+    .credits .credits__text {
+        margin-left: 0;
     }
     /* ___________FOOTER___________ */
     
