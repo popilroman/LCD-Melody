@@ -587,10 +587,10 @@ footer .footer__contacts {
         margin-top: 2px;
 
         transition: all 0.3s ease;
-        transform: scale(0);
+        transform: scaleX(0);
     }
     .nav__item:hover .nav__link::after {
-        transform: scale(1);
+        transform: scaleX(1);
     }
 
     .contacts {
