@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/preloader.css">
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,11 +22,11 @@
     <header class="header">
         <div class="container">
             <div class="menu">
-                <a href="./index.html" class="menu__logo">
+                <a href="./index.html" class="menu__logo wow fadeInLeft" data-wow-delay="0.4s">
                     <img src="img/logo.svg" alt="Мелодия">
                 </a>
                 <div class="menu__panel">
-                    <nav class="nav">
+                    <nav class="nav wow fadeInDown" data-wow-delay="0.4s">
                         <ul class="nav__list">
                             <li class="nav__item">
                                 <a href="#" class="nav__link"> Подобрать <br> квартиру </a>
@@ -41,7 +42,7 @@
                             </li>
                         </ul>
                     </nav>
-                    <div class="contacts">
+                    <div class="contacts wow fadeInRight" data-wow-delay="0.4s">
                         <span class="contacts__text">Закажите звонок:</span>
                         <br>
                         <a href="tel:+78431234567" class="contacts__phone">
@@ -49,7 +50,7 @@
                         </a>
                     </div>
                 </div>
-                <a href="#" class="menu__hamb">
+                <a href="#" class="menu__hamb wow fadeInRight" data-wow-delay="0.4s">
                     <span class="hamb" id="hamb"></span>
                 </a>
             </div>
@@ -61,7 +62,8 @@
         <!-- /.main__parallax -->
         <div class="container">
             <div class="wrapper">
-                <svg 
+                <div class="main__home wow fadeInLeft" data-wow-delay="0.8s">
+                    <svg 
                     class="home"
                     width="734" 
                     height="640" 
@@ -94,12 +96,14 @@
                     <path data-floor="17" d="M223 180.7V155.7L442.8 103.7L514 196V218.7L444.3 132.4L223 180.7Z" fill="#3595F6" fill-opacity="0.75"/>
                     <path data-floor="18" d="M223 155.7V129.7L445 73L514 174.7V195.7L444.7 104L223 155.7Z" fill="#3595F6" fill-opacity="0.75"/>
                 </svg>
+                </div>
+                <!-- /.main__home -->
                 
                 <div class="main__info">
-                    <h2 class="main__title">
+                    <h2 class="main__title wow fadeIn" data-wow-delay="0.8s">
                         Выберите желаемый этаж
                     </h2>
-                    <div class="counter">
+                    <div class="counter wow fadeInRight" data-wow-delay="0.8s">
                         <button class="counter__button counter__up">
                             <img src="img/up.svg" alt="Вверх" class="counter__arrow counter__arrow_down">
                         </button>
@@ -110,7 +114,7 @@
                             <img src="img/down.svg" alt="Вниз" class="counter__arrow counter__arrow_down">
                         </button>
                     </div>
-                    <button class="button__primary view-flats">
+                    <button class="button__primary view-flats wow fadeIn" data-wow-delay="0.8s">
                         Смотреть квартиры на этаже
                     </button>
                 </div>
@@ -197,7 +201,7 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer__wrap">
+            <div class="footer__wrap wow fadeInUp" data-wow-delay="0.4s">
                 <div class="communication">
                     <img src="img/footerLogo.svg" alt="СтандартСтрой" class="contacts__logo">
 
@@ -227,6 +231,7 @@
         </div>
     </footer>
 
+    <script src="js/wow.min.js"></script>
     <script src="js/preloader.js"></script>
     <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"

@@ -5,6 +5,8 @@ document.body.onload = function(){
        {
         preloader.classList.add("done");
         }
+
+        new WOW().init(); //Инициализация бибилиотеки WOW.js
     }, 1000);
 
 };
