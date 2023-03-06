@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const menuSpan = this.document.getElementById("hamb");
         const menuPanel = this.document.querySelector(".menu__panel");
 
-        menuHamb.addEventListener("click", function() {
+        menuHamb.addEventListener("click", function(evt) {
+            evt.preventDefault();
             transformBtn();
             isClick();
             outClick();
